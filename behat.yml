@@ -5,7 +5,8 @@ default:
         features: features
         bootstraps: "features/bootstrap"
       contexts:
-        - Behat\MinkExtension\Context\MinkContext
+        - FeatureContext
+        # - Behat\MinkExtension\Context\MinkContext
 
   extensions:
     Behat\MinkExtension:
