@@ -1,5 +1,7 @@
-Feature: Login
-         Scenario:
-                  Given I am on homepage
-                  When I login using valid credentials
-                  Then I should see my account section
+Feature: Visiting Wikipedia
+
+    Scenario: Search for an article on homepage
+        Given I am on "/"
+        When I fill in "text" with "abc"
+        And I press the "the button"
+        Then I should see "Broadcasting"

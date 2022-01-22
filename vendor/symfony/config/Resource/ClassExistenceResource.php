@@ -19,7 +19,7 @@ namespace Symfony\Component\Config\Resource;
  *
  * @author Fabien Potencier <fabien@symfony.com>
  *
- * @final
+ * @final since Symfony 4.3
  */
 class ClassExistenceResource implements SelfCheckingResourceInterface
 {
@@ -38,16 +38,22 @@ class ClassExistenceResource implements SelfCheckingResourceInterface
     {
         $this->resource = $resource;
         if (null !== $exists) {
-            $this->exists = [$exists, null];
+            $this->exists = [(bool) $exists, null];
         }
     }
 
-    public function __toString(): string
+    /**
+     * {@inheritdoc}
+     */
+    public function __toString()
     {
         return $this->resource;
     }
 
-    public function getResource(): string
+    /**
+     * @return string The file path to the resource
+     */
+    public function getResource()
     {
         return $this->resource;
     }
@@ -57,7 +63,7 @@ class ClassExistenceResource implements SelfCheckingResourceInterface
      *
      * @throws \ReflectionException when a parent class/interface/trait is not found
      */
-    public function isFresh(int $timestamp): bool
+    public function isFresh($timestamp)
     {
         $loaded = class_exists($this->resource, false) || interface_exists($this->resource, false) || trait_exists($this->resource, false);
 
@@ -143,7 +149,7 @@ class ClassExistenceResource implements SelfCheckingResourceInterface
      *
      * @internal
      */
-    public static function throwOnRequiredClass(string $class, \Exception $previous = null)
+    public static function throwOnRequiredClass($class, \Exception $previous = null)
     {
         // If the passed class is the resource being checked, we shouldn't throw.
         if (null === $previous && self::$autoloadedClass === $class) {
@@ -184,17 +190,12 @@ class ClassExistenceResource implements SelfCheckingResourceInterface
             'args' => [$class],
         ];
 
-        if (\PHP_VERSION_ID >= 80000 && isset($trace[1])) {
-            $callerFrame = $trace[1];
-            $i = 2;
-        } elseif (false !== $i = array_search($autoloadFrame, $trace, true)) {
-            $callerFrame = $trace[++$i];
-        } else {
+        if (false === $i = array_search($autoloadFrame, $trace, true)) {
             throw $e;
         }
 
-        if (isset($callerFrame['function']) && !isset($callerFrame['class'])) {
-            switch ($callerFrame['function']) {
+        if (isset($trace[++$i]['function']) && !isset($trace[$i]['class'])) {
+            switch ($trace[$i]['function']) {
                 case 'get_class_methods':
                 case 'get_class_vars':
                 case 'get_parent_class':
@@ -213,14 +214,14 @@ class ClassExistenceResource implements SelfCheckingResourceInterface
             }
 
             $props = [
-                'file' => $callerFrame['file'] ?? null,
-                'line' => $callerFrame['line'] ?? null,
+                'file' => isset($trace[$i]['file']) ? $trace[$i]['file'] : null,
+                'line' => isset($trace[$i]['line']) ? $trace[$i]['line'] : null,
                 'trace' => \array_slice($trace, 1 + $i),
             ];
 
             foreach ($props as $p => $v) {
                 if (null !== $v) {
-                    $r = new \ReflectionProperty(\Exception::class, $p);
+                    $r = new \ReflectionProperty('Exception', $p);
                     $r->setAccessible(true);
                     $r->setValue($e, $v);
                 }

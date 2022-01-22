@@ -4,11 +4,14 @@ use Behat\Behat\Tester\Exception\PendingException;
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
+use Behat\Behat\Context\SnippetAcceptingContext;
+use Behat\MinkExtension\Context\MinkContext;
+
 
 /**
  * Defines application features from the specific context.
  */
-class FeatureContext implements Context
+class FeatureContext extends MinkContext implements Context, SnippetAcceptingContext
 {
     /**
      * Initializes context.
@@ -19,29 +22,10 @@ class FeatureContext implements Context
      */
     public function __construct()
     {
+        
     }
 
-    /**
-     * @Given I am on homepage
-     */
-    public function iAmOnHomepage()
-    {
-        throw new PendingException();
-    }
 
-    /**
-     * @When I login using valid credentials
-     */
-    public function iLoginUsingValidCredentials()
-    {
-        throw new PendingException();
-    }
 
-    /**
-     * @Then I should see my account section
-     */
-    public function iShouldSeeMyAccountSection()
-    {
-        throw new PendingException();
-    }
+   
 }

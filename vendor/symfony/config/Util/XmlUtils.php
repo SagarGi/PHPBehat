@@ -44,24 +44,20 @@ class XmlUtils
      * @throws InvalidXmlException When parsing of XML with schema or callable produces any errors unrelated to the XML parsing itself
      * @throws \RuntimeException   When DOM extension is missing
      */
-    public static function parse(string $content, $schemaOrCallable = null)
+    public static function parse($content, $schemaOrCallable = null)
     {
         if (!\extension_loaded('dom')) {
             throw new \LogicException('Extension DOM is required.');
         }
 
         $internalErrors = libxml_use_internal_errors(true);
-        if (\LIBXML_VERSION < 20900) {
-            $disableEntities = libxml_disable_entity_loader(true);
-        }
+        $disableEntities = libxml_disable_entity_loader(true);
         libxml_clear_errors();
 
         $dom = new \DOMDocument();
         $dom->validateOnParse = true;
-        if (!$dom->loadXML($content, \LIBXML_NONET | (\defined('LIBXML_COMPACT') ? \LIBXML_COMPACT : 0))) {
-            if (\LIBXML_VERSION < 20900) {
-                libxml_disable_entity_loader($disableEntities);
-            }
+        if (!$dom->loadXML($content, LIBXML_NONET | (\defined('LIBXML_COMPACT') ? LIBXML_COMPACT : 0))) {
+            libxml_disable_entity_loader($disableEntities);
 
             throw new XmlParsingException(implode("\n", static::getXmlErrors($internalErrors)));
         }
@@ -69,12 +65,10 @@ class XmlUtils
         $dom->normalizeDocument();
 
         libxml_use_internal_errors($internalErrors);
-        if (\LIBXML_VERSION < 20900) {
-            libxml_disable_entity_loader($disableEntities);
-        }
+        libxml_disable_entity_loader($disableEntities);
 
         foreach ($dom->childNodes as $child) {
-            if (\XML_DOCUMENT_TYPE_NODE === $child->nodeType) {
+            if (XML_DOCUMENT_TYPE_NODE === $child->nodeType) {
                 throw new XmlParsingException('Document types are not allowed.');
             }
         }
@@ -126,7 +120,7 @@ class XmlUtils
      * @throws XmlParsingException       When XML parsing returns any errors
      * @throws \RuntimeException         When DOM extension is missing
      */
-    public static function loadFile(string $file, $schemaOrCallable = null)
+    public static function loadFile($file, $schemaOrCallable = null)
     {
         if (!is_file($file)) {
             throw new \InvalidArgumentException(sprintf('Resource "%s" is not a file.', $file));
@@ -169,7 +163,7 @@ class XmlUtils
      *
      * @return mixed
      */
-    public static function convertDomElementToArray(\DOMElement $element, bool $checkPrefix = true)
+    public static function convertDomElementToArray(\DOMElement $element, $checkPrefix = true)
     {
         $prefix = (string) $element->prefix;
         $empty = true;
@@ -236,11 +230,15 @@ class XmlUtils
             case 'null' === $lowercaseValue:
                 return null;
             case ctype_digit($value):
+                $raw = $value;
+                $cast = (int) $value;
+
+                return '0' == $value[0] ? octdec($value) : (((string) $raw === (string) $cast) ? $cast : $raw);
             case isset($value[1]) && '-' === $value[0] && ctype_digit(substr($value, 1)):
                 $raw = $value;
                 $cast = (int) $value;
 
-                return self::isOctal($value) ? \intval($value, 8) : (($raw === (string) $cast) ? $cast : $raw);
+                return '0' == $value[1] ? octdec($value) : (((string) $raw === (string) $cast) ? $cast : $raw);
             case 'true' === $lowercaseValue:
                 return true;
             case 'false' === $lowercaseValue:
@@ -258,12 +256,12 @@ class XmlUtils
         }
     }
 
-    protected static function getXmlErrors(bool $internalErrors)
+    protected static function getXmlErrors($internalErrors)
     {
         $errors = [];
         foreach (libxml_get_errors() as $error) {
             $errors[] = sprintf('[%s %s] %s (in %s - line %d, column %d)',
-                \LIBXML_ERR_WARNING == $error->level ? 'WARNING' : 'ERROR',
+                LIBXML_ERR_WARNING == $error->level ? 'WARNING' : 'ERROR',
                 $error->code,
                 trim($error->message),
                 $error->file ?: 'n/a',
@@ -276,14 +274,5 @@ class XmlUtils
         libxml_use_internal_errors($internalErrors);
 
         return $errors;
-    }
-
-    private static function isOctal(string $str): bool
-    {
-        if ('-' === $str[0]) {
-            $str = substr($str, 1);
-        }
-
-        return $str === '0'.decoct(\intval($str, 8));
     }
 }

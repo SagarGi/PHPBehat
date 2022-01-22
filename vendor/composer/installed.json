@@ -146,6 +146,314 @@
         ]
     },
     {
+        "name": "behat/mink",
+        "version": "v1.9.0",
+        "version_normalized": "1.9.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/minkphp/Mink.git",
+            "reference": "e35f4695de8800fc776af34ebf665ad58ebdd996"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/minkphp/Mink/zipball/e35f4695de8800fc776af34ebf665ad58ebdd996",
+            "reference": "e35f4695de8800fc776af34ebf665ad58ebdd996",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4",
+            "symfony/css-selector": "^2.7|^3.0|^4.0|^5.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.8.36 || ^5.7.27 || ^6.5.14 || ^7.5.20 || ^8.5 || ^9.5",
+            "symfony/debug": "^2.7|^3.0|^4.0|^5.0",
+            "symfony/phpunit-bridge": "^3.4.38 || ^4.4 || ^5.0.5",
+            "yoast/phpunit-polyfills": "^1.0"
+        },
+        "suggest": {
+            "behat/mink-browserkit-driver": "extremely fast headless driver for Symfony\\Kernel-based apps (Sf2, Silex)",
+            "behat/mink-goutte-driver": "fast headless driver for any app without JS emulation",
+            "behat/mink-selenium2-driver": "slow, but JS-enabled driver for any app (requires Selenium2)",
+            "behat/mink-zombie-driver": "fast and JS-enabled headless driver for any app (requires node.js)",
+            "dmore/chrome-mink-driver": "fast and JS-enabled driver for any app (requires chromium or google chrome)"
+        },
+        "time": "2021-10-11T11:58:47+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Behat\\Mink\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Kudryashov",
+                "email": "ever.zet@gmail.com",
+                "homepage": "http://everzet.com"
+            }
+        ],
+        "description": "Browser controller/emulator abstraction for PHP",
+        "homepage": "https://mink.behat.org/",
+        "keywords": [
+            "browser",
+            "testing",
+            "web"
+        ]
+    },
+    {
+        "name": "behat/mink-browserkit-driver",
+        "version": "v2.0.0",
+        "version_normalized": "2.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/minkphp/MinkBrowserKitDriver.git",
+            "reference": "0d3d9c3b375be6f3d44fd6d1e08ed28c104b3bd4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/minkphp/MinkBrowserKitDriver/zipball/0d3d9c3b375be6f3d44fd6d1e08ed28c104b3bd4",
+            "reference": "0d3d9c3b375be6f3d44fd6d1e08ed28c104b3bd4",
+            "shasum": ""
+        },
+        "require": {
+            "behat/mink": "^1.9.0@dev",
+            "php": ">=7.2",
+            "symfony/browser-kit": "^4.4 || ^5.0",
+            "symfony/dom-crawler": "^4.4 || ^5.0"
+        },
+        "require-dev": {
+            "mink/driver-testsuite": "dev-master",
+            "phpunit/phpunit": "^8.5 || ^9.5",
+            "symfony/error-handler": "^4.4 || ^5.0",
+            "symfony/http-client": "^4.4 || ^5.0",
+            "symfony/http-kernel": "^4.4 || ^5.0",
+            "symfony/mime": "^4.4 || ^5.0",
+            "yoast/phpunit-polyfills": "^1.0"
+        },
+        "time": "2021-12-13T10:31:49+00:00",
+        "type": "mink-driver",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Behat\\Mink\\Driver\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Kudryashov",
+                "email": "ever.zet@gmail.com",
+                "homepage": "http://everzet.com"
+            }
+        ],
+        "description": "Symfony2 BrowserKit driver for Mink framework",
+        "homepage": "https://mink.behat.org/",
+        "keywords": [
+            "Mink",
+            "Symfony2",
+            "browser",
+            "testing"
+        ]
+    },
+    {
+        "name": "behat/mink-extension",
+        "version": "2.3.1",
+        "version_normalized": "2.3.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Behat/MinkExtension.git",
+            "reference": "80f7849ba53867181b7e412df9210e12fba50177"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Behat/MinkExtension/zipball/80f7849ba53867181b7e412df9210e12fba50177",
+            "reference": "80f7849ba53867181b7e412df9210e12fba50177",
+            "shasum": ""
+        },
+        "require": {
+            "behat/behat": "^3.0.5",
+            "behat/mink": "^1.5",
+            "php": ">=5.3.2",
+            "symfony/config": "^2.7|^3.0|^4.0"
+        },
+        "require-dev": {
+            "behat/mink-goutte-driver": "^1.1",
+            "phpspec/phpspec": "^2.0"
+        },
+        "time": "2018-02-06T15:36:30+00:00",
+        "type": "behat-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Behat\\MinkExtension": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Christophe Coevoet",
+                "email": "stof@notk.org"
+            },
+            {
+                "name": "Konstantin Kudryashov",
+                "email": "ever.zet@gmail.com"
+            }
+        ],
+        "description": "Mink extension for Behat",
+        "homepage": "http://extensions.behat.org/mink",
+        "keywords": [
+            "browser",
+            "gui",
+            "test",
+            "web"
+        ]
+    },
+    {
+        "name": "behat/mink-goutte-driver",
+        "version": "v2.0.0",
+        "version_normalized": "2.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/minkphp/MinkGoutteDriver.git",
+            "reference": "a60fba46520c17d39b839151831cbc0710764b56"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/minkphp/MinkGoutteDriver/zipball/a60fba46520c17d39b839151831cbc0710764b56",
+            "reference": "a60fba46520c17d39b839151831cbc0710764b56",
+            "shasum": ""
+        },
+        "require": {
+            "behat/mink-browserkit-driver": "^2.0@dev",
+            "fabpot/goutte": "^4.0",
+            "php": ">=7.2"
+        },
+        "require-dev": {
+            "mink/driver-testsuite": "dev-master",
+            "symfony/error-handler": "^4.4 || ^5.0"
+        },
+        "time": "2021-12-29T10:56:50+00:00",
+        "type": "mink-driver",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Behat\\Mink\\Driver\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Kudryashov",
+                "email": "ever.zet@gmail.com",
+                "homepage": "http://everzet.com"
+            }
+        ],
+        "description": "Goutte driver for Mink framework",
+        "homepage": "https://mink.behat.org/",
+        "keywords": [
+            "browser",
+            "goutte",
+            "headless",
+            "testing"
+        ]
+    },
+    {
+        "name": "behat/mink-selenium2-driver",
+        "version": "v1.5.0",
+        "version_normalized": "1.5.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/minkphp/MinkSelenium2Driver.git",
+            "reference": "0dee8cceed7e198bf130b4af0fab0ffab6dab47f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/minkphp/MinkSelenium2Driver/zipball/0dee8cceed7e198bf130b4af0fab0ffab6dab47f",
+            "reference": "0dee8cceed7e198bf130b4af0fab0ffab6dab47f",
+            "shasum": ""
+        },
+        "require": {
+            "behat/mink": "~1.7@dev",
+            "instaclick/php-webdriver": "~1.1",
+            "php": ">=5.4"
+        },
+        "require-dev": {
+            "mink/driver-testsuite": "dev-master"
+        },
+        "time": "2021-10-12T16:01:47+00:00",
+        "type": "mink-driver",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Behat\\Mink\\Driver\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Pete Otaqui",
+                "email": "pete@otaqui.com",
+                "homepage": "https://github.com/pete-otaqui"
+            },
+            {
+                "name": "Konstantin Kudryashov",
+                "email": "ever.zet@gmail.com",
+                "homepage": "http://everzet.com"
+            }
+        ],
+        "description": "Selenium2 (WebDriver) driver for Mink framework",
+        "homepage": "https://mink.behat.org/",
+        "keywords": [
+            "ajax",
+            "browser",
+            "javascript",
+            "selenium",
+            "testing",
+            "webdriver"
+        ]
+    },
+    {
         "name": "behat/transliterator",
         "version": "v1.3.0",
         "version_normalized": "1.3.0.0",
@@ -190,6 +498,330 @@
             "i18n",
             "slug",
             "transliterator"
+        ]
+    },
+    {
+        "name": "fabpot/goutte",
+        "version": "v4.0.2",
+        "version_normalized": "4.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/FriendsOfPHP/Goutte.git",
+            "reference": "f51940fbe0db060bc4fc0b3f1d19bc4ff3054b17"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/FriendsOfPHP/Goutte/zipball/f51940fbe0db060bc4fc0b3f1d19bc4ff3054b17",
+            "reference": "f51940fbe0db060bc4fc0b3f1d19bc4ff3054b17",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.1.3",
+            "symfony/browser-kit": "^4.4|^5.0|^6.0",
+            "symfony/css-selector": "^4.4|^5.0|^6.0",
+            "symfony/dom-crawler": "^4.4|^5.0|^6.0",
+            "symfony/http-client": "^4.4|^5.0|^6.0",
+            "symfony/mime": "^4.4|^5.0|^6.0"
+        },
+        "require-dev": {
+            "symfony/phpunit-bridge": "^5.0|^6.0"
+        },
+        "time": "2021-12-17T17:15:01+00:00",
+        "type": "application",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Goutte\\": "Goutte"
+            },
+            "exclude-from-classmap": [
+                "Goutte/Tests"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            }
+        ],
+        "description": "A simple PHP Web Scraper",
+        "homepage": "https://github.com/FriendsOfPHP/Goutte",
+        "keywords": [
+            "scraper"
+        ]
+    },
+    {
+        "name": "guzzle/common",
+        "version": "v3.9.2",
+        "version_normalized": "3.9.2.0",
+        "target-dir": "Guzzle/Common",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Guzzle3/common.git",
+            "reference": "2e36af7cf2ce3ea1f2d7c2831843b883a8e7b7dc"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Guzzle3/common/zipball/2e36af7cf2ce3ea1f2d7c2831843b883a8e7b7dc",
+            "reference": "2e36af7cf2ce3ea1f2d7c2831843b883a8e7b7dc",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.2",
+            "symfony/event-dispatcher": ">=2.1"
+        },
+        "time": "2014-08-11T04:32:36+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.7-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Guzzle\\Common": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Common libraries used by Guzzle",
+        "homepage": "http://guzzlephp.org/",
+        "keywords": [
+            "collection",
+            "common",
+            "event",
+            "exception"
+        ],
+        "abandoned": "guzzle/guzzle"
+    },
+    {
+        "name": "guzzle/http",
+        "version": "v3.9.2",
+        "version_normalized": "3.9.2.0",
+        "target-dir": "Guzzle/Http",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Guzzle3/http.git",
+            "reference": "1e8dd1e2ba9dc42332396f39fbfab950b2301dc5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Guzzle3/http/zipball/1e8dd1e2ba9dc42332396f39fbfab950b2301dc5",
+            "reference": "1e8dd1e2ba9dc42332396f39fbfab950b2301dc5",
+            "shasum": ""
+        },
+        "require": {
+            "guzzle/common": "self.version",
+            "guzzle/parser": "self.version",
+            "guzzle/stream": "self.version",
+            "php": ">=5.3.2"
+        },
+        "suggest": {
+            "ext-curl": "*"
+        },
+        "time": "2014-08-11T04:32:36+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.7-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Guzzle\\Http": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            }
+        ],
+        "description": "HTTP libraries used by Guzzle",
+        "homepage": "http://guzzlephp.org/",
+        "keywords": [
+            "Guzzle",
+            "client",
+            "curl",
+            "http",
+            "http client"
+        ],
+        "abandoned": "guzzle/guzzle"
+    },
+    {
+        "name": "guzzle/parser",
+        "version": "v3.9.2",
+        "version_normalized": "3.9.2.0",
+        "target-dir": "Guzzle/Parser",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Guzzle3/parser.git",
+            "reference": "6874d171318a8e93eb6d224cf85e4678490b625c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Guzzle3/parser/zipball/6874d171318a8e93eb6d224cf85e4678490b625c",
+            "reference": "6874d171318a8e93eb6d224cf85e4678490b625c",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.2"
+        },
+        "time": "2014-02-05T18:29:46+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.7-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Guzzle\\Parser": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Interchangeable parsers used by Guzzle",
+        "homepage": "http://guzzlephp.org/",
+        "keywords": [
+            "URI Template",
+            "cookie",
+            "http",
+            "message",
+            "url"
+        ],
+        "abandoned": "guzzle/guzzle"
+    },
+    {
+        "name": "guzzle/stream",
+        "version": "v3.9.2",
+        "version_normalized": "3.9.2.0",
+        "target-dir": "Guzzle/Stream",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Guzzle3/stream.git",
+            "reference": "60c7fed02e98d2c518dae8f97874c8f4622100f0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Guzzle3/stream/zipball/60c7fed02e98d2c518dae8f97874c8f4622100f0",
+            "reference": "60c7fed02e98d2c518dae8f97874c8f4622100f0",
+            "shasum": ""
+        },
+        "require": {
+            "guzzle/common": "self.version",
+            "php": ">=5.3.2"
+        },
+        "suggest": {
+            "guzzle/http": "To convert Guzzle request objects to PHP streams"
+        },
+        "time": "2014-05-01T21:36:02+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.7-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Guzzle\\Stream": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            }
+        ],
+        "description": "Guzzle stream wrapper component",
+        "homepage": "http://guzzlephp.org/",
+        "keywords": [
+            "Guzzle",
+            "component",
+            "stream"
+        ],
+        "abandoned": "guzzle/guzzle"
+    },
+    {
+        "name": "instaclick/php-webdriver",
+        "version": "1.4.10",
+        "version_normalized": "1.4.10.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/instaclick/php-webdriver.git",
+            "reference": "6bc1f44cf23031e68c326cd61e14ec32486f241b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/instaclick/php-webdriver/zipball/6bc1f44cf23031e68c326cd61e14ec32486f241b",
+            "reference": "6bc1f44cf23031e68c326cd61e14ec32486f241b",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "php": ">=5.3.2"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.8",
+            "satooshi/php-coveralls": "^1.0||^2.0"
+        },
+        "time": "2021-10-14T03:25:34+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.4.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "WebDriver": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "authors": [
+            {
+                "name": "Justin Bishop",
+                "email": "jubishop@gmail.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Anthon Pang",
+                "email": "apang@softwaredevelopment.ca",
+                "role": "Fork Maintainer"
+            }
+        ],
+        "description": "PHP WebDriver for Selenium 2",
+        "homepage": "http://instaclick.com/",
+        "keywords": [
+            "browser",
+            "selenium",
+            "webdriver",
+            "webtest"
         ]
     },
     {
@@ -287,43 +919,165 @@
         ]
     },
     {
-        "name": "symfony/config",
+        "name": "psr/log",
+        "version": "1.1.4",
+        "version_normalized": "1.1.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/log.git",
+            "reference": "d49695b909c3b7628b6289db5479a1c204601f11"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-fig/log/zipball/d49695b909c3b7628b6289db5479a1c204601f11",
+            "reference": "d49695b909c3b7628b6289db5479a1c204601f11",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2021-05-03T11:20:27+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Psr\\Log\\": "Psr/Log/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "https://www.php-fig.org/"
+            }
+        ],
+        "description": "Common interface for logging libraries",
+        "homepage": "https://github.com/php-fig/log",
+        "keywords": [
+            "log",
+            "psr",
+            "psr-3"
+        ]
+    },
+    {
+        "name": "symfony/browser-kit",
         "version": "v5.4.2",
         "version_normalized": "5.4.2.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/symfony/config.git",
-            "reference": "2e082dae50da563c639119b7b52347a2a3db4ba5"
+            "url": "https://github.com/symfony/browser-kit.git",
+            "reference": "1fb93b0aab42392aa0a742db205173b49afaf80f"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/config/zipball/2e082dae50da563c639119b7b52347a2a3db4ba5",
-            "reference": "2e082dae50da563c639119b7b52347a2a3db4ba5",
+            "url": "https://api.github.com/repos/symfony/browser-kit/zipball/1fb93b0aab42392aa0a742db205173b49afaf80f",
+            "reference": "1fb93b0aab42392aa0a742db205173b49afaf80f",
             "shasum": ""
         },
         "require": {
             "php": ">=7.2.5",
-            "symfony/deprecation-contracts": "^2.1|^3",
-            "symfony/filesystem": "^4.4|^5.0|^6.0",
-            "symfony/polyfill-ctype": "~1.8",
-            "symfony/polyfill-php80": "^1.16",
-            "symfony/polyfill-php81": "^1.22"
-        },
-        "conflict": {
-            "symfony/finder": "<4.4"
+            "symfony/dom-crawler": "^4.4|^5.0|^6.0",
+            "symfony/polyfill-php80": "^1.16"
         },
         "require-dev": {
-            "symfony/event-dispatcher": "^4.4|^5.0|^6.0",
-            "symfony/finder": "^4.4|^5.0|^6.0",
-            "symfony/messenger": "^4.4|^5.0|^6.0",
-            "symfony/service-contracts": "^1.1|^2|^3",
-            "symfony/yaml": "^4.4|^5.0|^6.0"
+            "symfony/css-selector": "^4.4|^5.0|^6.0",
+            "symfony/http-client": "^4.4|^5.0|^6.0",
+            "symfony/mime": "^4.4|^5.0|^6.0",
+            "symfony/process": "^4.4|^5.0|^6.0"
+        },
+        "suggest": {
+            "symfony/process": ""
+        },
+        "time": "2021-12-16T21:58:21+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\BrowserKit\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Simulates the behavior of a web browser, allowing you to make requests, click on links and submit forms programmatically",
+        "homepage": "https://symfony.com",
+        "funding": [
+            {
+                "url": "https://symfony.com/sponsor",
+                "type": "custom"
+            },
+            {
+                "url": "https://github.com/fabpot",
+                "type": "github"
+            },
+            {
+                "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                "type": "tidelift"
+            }
+        ]
+    },
+    {
+        "name": "symfony/config",
+        "version": "v4.4.9",
+        "version_normalized": "4.4.9.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/config.git",
+            "reference": "395f6e09e1dc6ac9c1a5eea3b7f44f7a820a5504"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/config/zipball/395f6e09e1dc6ac9c1a5eea3b7f44f7a820a5504",
+            "reference": "395f6e09e1dc6ac9c1a5eea3b7f44f7a820a5504",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.1.3",
+            "symfony/filesystem": "^3.4|^4.0|^5.0",
+            "symfony/polyfill-ctype": "~1.8"
+        },
+        "conflict": {
+            "symfony/finder": "<3.4"
+        },
+        "require-dev": {
+            "symfony/event-dispatcher": "^3.4|^4.0|^5.0",
+            "symfony/finder": "^3.4|^4.0|^5.0",
+            "symfony/messenger": "^4.1|^5.0",
+            "symfony/service-contracts": "^1.1|^2",
+            "symfony/yaml": "^3.4|^4.0|^5.0"
         },
         "suggest": {
             "symfony/yaml": "To use the yaml reference dumper"
         },
-        "time": "2021-12-15T11:06:13+00:00",
+        "time": "2020-05-23T09:11:46+00:00",
         "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "4.4-dev"
+            }
+        },
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
@@ -347,7 +1101,7 @@
                 "homepage": "https://symfony.com/contributors"
             }
         ],
-        "description": "Helps you find, load, combine, autofill and validate configuration values of any kind",
+        "description": "Symfony Config Component",
         "homepage": "https://symfony.com",
         "funding": [
             {
@@ -463,43 +1217,105 @@
         ]
     },
     {
-        "name": "symfony/dependency-injection",
+        "name": "symfony/css-selector",
         "version": "v5.4.2",
         "version_normalized": "5.4.2.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/symfony/dependency-injection.git",
-            "reference": "ba94559be9738d77cd29e24b5d81cf3b89b7d628"
+            "url": "https://github.com/symfony/css-selector.git",
+            "reference": "cfcbee910e159df402603502fe387e8b677c22fd"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/ba94559be9738d77cd29e24b5d81cf3b89b7d628",
-            "reference": "ba94559be9738d77cd29e24b5d81cf3b89b7d628",
+            "url": "https://api.github.com/repos/symfony/css-selector/zipball/cfcbee910e159df402603502fe387e8b677c22fd",
+            "reference": "cfcbee910e159df402603502fe387e8b677c22fd",
             "shasum": ""
         },
         "require": {
             "php": ">=7.2.5",
-            "psr/container": "^1.1.1",
-            "symfony/deprecation-contracts": "^2.1|^3",
+            "symfony/polyfill-php80": "^1.16"
+        },
+        "time": "2021-12-16T21:58:21+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\CssSelector\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Jean-François Simon",
+                "email": "jeanfrancois.simon@sensiolabs.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Converts CSS selectors to XPath expressions",
+        "homepage": "https://symfony.com",
+        "funding": [
+            {
+                "url": "https://symfony.com/sponsor",
+                "type": "custom"
+            },
+            {
+                "url": "https://github.com/fabpot",
+                "type": "github"
+            },
+            {
+                "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                "type": "tidelift"
+            }
+        ]
+    },
+    {
+        "name": "symfony/dependency-injection",
+        "version": "v4.4.36",
+        "version_normalized": "4.4.36.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/dependency-injection.git",
+            "reference": "24e802b4973d3a60c01fd77bdaac8a66944202e1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/24e802b4973d3a60c01fd77bdaac8a66944202e1",
+            "reference": "24e802b4973d3a60c01fd77bdaac8a66944202e1",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.1.3",
+            "psr/container": "^1.0",
             "symfony/polyfill-php80": "^1.16",
-            "symfony/polyfill-php81": "^1.22",
             "symfony/service-contracts": "^1.1.6|^2"
         },
         "conflict": {
-            "ext-psr": "<1.1|>=2",
-            "symfony/config": "<5.3",
-            "symfony/finder": "<4.4",
-            "symfony/proxy-manager-bridge": "<4.4",
-            "symfony/yaml": "<4.4"
+            "symfony/config": "<4.3|>=5.0",
+            "symfony/finder": "<3.4",
+            "symfony/proxy-manager-bridge": "<3.4",
+            "symfony/yaml": "<3.4"
         },
         "provide": {
             "psr/container-implementation": "1.0",
             "symfony/service-implementation": "1.0|2.0"
         },
         "require-dev": {
-            "symfony/config": "^5.3|^6.0",
-            "symfony/expression-language": "^4.4|^5.0|^6.0",
-            "symfony/yaml": "^4.4|^5.0|^6.0"
+            "symfony/config": "^4.3",
+            "symfony/expression-language": "^3.4|^4.0|^5.0",
+            "symfony/yaml": "^4.4|^5.0"
         },
         "suggest": {
             "symfony/config": "",
@@ -508,7 +1324,7 @@
             "symfony/proxy-manager-bridge": "Generate service proxies to lazy load them",
             "symfony/yaml": ""
         },
-        "time": "2021-12-29T10:10:35+00:00",
+        "time": "2021-12-29T10:03:29+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -600,6 +1416,80 @@
             }
         ],
         "description": "A generic function and convention to trigger deprecation notices",
+        "homepage": "https://symfony.com",
+        "funding": [
+            {
+                "url": "https://symfony.com/sponsor",
+                "type": "custom"
+            },
+            {
+                "url": "https://github.com/fabpot",
+                "type": "github"
+            },
+            {
+                "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                "type": "tidelift"
+            }
+        ]
+    },
+    {
+        "name": "symfony/dom-crawler",
+        "version": "v5.4.2",
+        "version_normalized": "5.4.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/dom-crawler.git",
+            "reference": "bb3bc3699779fc6d9646270789026a7e2cec7ec7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/bb3bc3699779fc6d9646270789026a7e2cec7ec7",
+            "reference": "bb3bc3699779fc6d9646270789026a7e2cec7ec7",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.2.5",
+            "symfony/deprecation-contracts": "^2.1|^3",
+            "symfony/polyfill-ctype": "~1.8",
+            "symfony/polyfill-mbstring": "~1.0",
+            "symfony/polyfill-php80": "^1.16"
+        },
+        "conflict": {
+            "masterminds/html5": "<2.6"
+        },
+        "require-dev": {
+            "masterminds/html5": "^2.6",
+            "symfony/css-selector": "^4.4|^5.0|^6.0"
+        },
+        "suggest": {
+            "symfony/css-selector": ""
+        },
+        "time": "2021-12-28T17:15:56+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\DomCrawler\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Eases DOM navigation for HTML and XML documents",
         "homepage": "https://symfony.com",
         "funding": [
             {
@@ -842,6 +1732,251 @@
         ]
     },
     {
+        "name": "symfony/http-client",
+        "version": "v5.4.2",
+        "version_normalized": "5.4.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/http-client.git",
+            "reference": "5e344f1402584a56631c81a24ec9403e3159c790"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/http-client/zipball/5e344f1402584a56631c81a24ec9403e3159c790",
+            "reference": "5e344f1402584a56631c81a24ec9403e3159c790",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.2.5",
+            "psr/log": "^1|^2|^3",
+            "symfony/deprecation-contracts": "^2.1|^3",
+            "symfony/http-client-contracts": "^2.4",
+            "symfony/polyfill-php73": "^1.11",
+            "symfony/polyfill-php80": "^1.16",
+            "symfony/service-contracts": "^1.0|^2|^3"
+        },
+        "provide": {
+            "php-http/async-client-implementation": "*",
+            "php-http/client-implementation": "*",
+            "psr/http-client-implementation": "1.0",
+            "symfony/http-client-implementation": "2.4"
+        },
+        "require-dev": {
+            "amphp/amp": "^2.5",
+            "amphp/http-client": "^4.2.1",
+            "amphp/http-tunnel": "^1.0",
+            "amphp/socket": "^1.1",
+            "guzzlehttp/promises": "^1.4",
+            "nyholm/psr7": "^1.0",
+            "php-http/httplug": "^1.0|^2.0",
+            "psr/http-client": "^1.0",
+            "symfony/dependency-injection": "^4.4|^5.0|^6.0",
+            "symfony/http-kernel": "^4.4.13|^5.1.5|^6.0",
+            "symfony/process": "^4.4|^5.0|^6.0",
+            "symfony/stopwatch": "^4.4|^5.0|^6.0"
+        },
+        "time": "2021-12-29T10:10:35+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\HttpClient\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nicolas Grekas",
+                "email": "p@tchwork.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Provides powerful methods to fetch HTTP resources synchronously or asynchronously",
+        "homepage": "https://symfony.com",
+        "funding": [
+            {
+                "url": "https://symfony.com/sponsor",
+                "type": "custom"
+            },
+            {
+                "url": "https://github.com/fabpot",
+                "type": "github"
+            },
+            {
+                "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                "type": "tidelift"
+            }
+        ]
+    },
+    {
+        "name": "symfony/http-client-contracts",
+        "version": "v2.5.0",
+        "version_normalized": "2.5.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/http-client-contracts.git",
+            "reference": "ec82e57b5b714dbb69300d348bd840b345e24166"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/http-client-contracts/zipball/ec82e57b5b714dbb69300d348bd840b345e24166",
+            "reference": "ec82e57b5b714dbb69300d348bd840b345e24166",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.2.5"
+        },
+        "suggest": {
+            "symfony/http-client-implementation": ""
+        },
+        "time": "2021-11-03T09:24:47+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-main": "2.5-dev"
+            },
+            "thanks": {
+                "name": "symfony/contracts",
+                "url": "https://github.com/symfony/contracts"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Contracts\\HttpClient\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nicolas Grekas",
+                "email": "p@tchwork.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Generic abstractions related to HTTP clients",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "abstractions",
+            "contracts",
+            "decoupling",
+            "interfaces",
+            "interoperability",
+            "standards"
+        ],
+        "funding": [
+            {
+                "url": "https://symfony.com/sponsor",
+                "type": "custom"
+            },
+            {
+                "url": "https://github.com/fabpot",
+                "type": "github"
+            },
+            {
+                "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                "type": "tidelift"
+            }
+        ]
+    },
+    {
+        "name": "symfony/mime",
+        "version": "v5.4.2",
+        "version_normalized": "5.4.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/mime.git",
+            "reference": "1bfd938cf9562822c05c4d00e8f92134d3c8e42d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/mime/zipball/1bfd938cf9562822c05c4d00e8f92134d3c8e42d",
+            "reference": "1bfd938cf9562822c05c4d00e8f92134d3c8e42d",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.2.5",
+            "symfony/deprecation-contracts": "^2.1|^3",
+            "symfony/polyfill-intl-idn": "^1.10",
+            "symfony/polyfill-mbstring": "^1.0",
+            "symfony/polyfill-php80": "^1.16"
+        },
+        "conflict": {
+            "egulias/email-validator": "~3.0.0",
+            "phpdocumentor/reflection-docblock": "<3.2.2",
+            "phpdocumentor/type-resolver": "<1.4.0",
+            "symfony/mailer": "<4.4"
+        },
+        "require-dev": {
+            "egulias/email-validator": "^2.1.10|^3.1",
+            "phpdocumentor/reflection-docblock": "^3.0|^4.0|^5.0",
+            "symfony/dependency-injection": "^4.4|^5.0|^6.0",
+            "symfony/property-access": "^4.4|^5.1|^6.0",
+            "symfony/property-info": "^4.4|^5.1|^6.0",
+            "symfony/serializer": "^5.2|^6.0"
+        },
+        "time": "2021-12-28T17:15:56+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Mime\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Allows manipulating MIME messages",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "mime",
+            "mime-type"
+        ],
+        "funding": [
+            {
+                "url": "https://symfony.com/sponsor",
+                "type": "custom"
+            },
+            {
+                "url": "https://github.com/fabpot",
+                "type": "github"
+            },
+            {
+                "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                "type": "tidelift"
+            }
+        ]
+    },
+    {
         "name": "symfony/polyfill-ctype",
         "version": "v1.24.0",
         "version_normalized": "1.24.0.0",
@@ -982,6 +2117,92 @@
         "keywords": [
             "compatibility",
             "grapheme",
+            "intl",
+            "polyfill",
+            "portable",
+            "shim"
+        ],
+        "funding": [
+            {
+                "url": "https://symfony.com/sponsor",
+                "type": "custom"
+            },
+            {
+                "url": "https://github.com/fabpot",
+                "type": "github"
+            },
+            {
+                "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                "type": "tidelift"
+            }
+        ]
+    },
+    {
+        "name": "symfony/polyfill-intl-idn",
+        "version": "v1.24.0",
+        "version_normalized": "1.24.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/polyfill-intl-idn.git",
+            "reference": "749045c69efb97c70d25d7463abba812e91f3a44"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/polyfill-intl-idn/zipball/749045c69efb97c70d25d7463abba812e91f3a44",
+            "reference": "749045c69efb97c70d25d7463abba812e91f3a44",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.1",
+            "symfony/polyfill-intl-normalizer": "^1.10",
+            "symfony/polyfill-php72": "^1.10"
+        },
+        "suggest": {
+            "ext-intl": "For best performance"
+        },
+        "time": "2021-09-14T14:02:44+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-main": "1.23-dev"
+            },
+            "thanks": {
+                "name": "symfony/polyfill",
+                "url": "https://github.com/symfony/polyfill"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Polyfill\\Intl\\Idn\\": ""
+            },
+            "files": [
+                "bootstrap.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Laurent Bassin",
+                "email": "laurent@bassin.info"
+            },
+            {
+                "name": "Trevor Rowbotham",
+                "email": "trevor.rowbotham@pm.me"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony polyfill for intl's idn_to_ascii and idn_to_utf8 functions",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "compatibility",
+            "idn",
             "intl",
             "polyfill",
             "portable",
@@ -1168,6 +2389,81 @@
         ]
     },
     {
+        "name": "symfony/polyfill-php72",
+        "version": "v1.24.0",
+        "version_normalized": "1.24.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/polyfill-php72.git",
+            "reference": "9a142215a36a3888e30d0a9eeea9766764e96976"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/polyfill-php72/zipball/9a142215a36a3888e30d0a9eeea9766764e96976",
+            "reference": "9a142215a36a3888e30d0a9eeea9766764e96976",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.1"
+        },
+        "time": "2021-05-27T09:17:38+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-main": "1.23-dev"
+            },
+            "thanks": {
+                "name": "symfony/polyfill",
+                "url": "https://github.com/symfony/polyfill"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Polyfill\\Php72\\": ""
+            },
+            "files": [
+                "bootstrap.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nicolas Grekas",
+                "email": "p@tchwork.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony polyfill backporting some PHP 7.2+ features to lower PHP versions",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "compatibility",
+            "polyfill",
+            "portable",
+            "shim"
+        ],
+        "funding": [
+            {
+                "url": "https://symfony.com/sponsor",
+                "type": "custom"
+            },
+            {
+                "url": "https://github.com/fabpot",
+                "type": "github"
+            },
+            {
+                "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                "type": "tidelift"
+            }
+        ]
+    },
+    {
         "name": "symfony/polyfill-php73",
         "version": "v1.24.0",
         "version_normalized": "1.24.0.0",
@@ -1305,84 +2601,6 @@
             }
         ],
         "description": "Symfony polyfill backporting some PHP 8.0+ features to lower PHP versions",
-        "homepage": "https://symfony.com",
-        "keywords": [
-            "compatibility",
-            "polyfill",
-            "portable",
-            "shim"
-        ],
-        "funding": [
-            {
-                "url": "https://symfony.com/sponsor",
-                "type": "custom"
-            },
-            {
-                "url": "https://github.com/fabpot",
-                "type": "github"
-            },
-            {
-                "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                "type": "tidelift"
-            }
-        ]
-    },
-    {
-        "name": "symfony/polyfill-php81",
-        "version": "v1.24.0",
-        "version_normalized": "1.24.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/polyfill-php81.git",
-            "reference": "5de4ba2d41b15f9bd0e19b2ab9674135813ec98f"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/polyfill-php81/zipball/5de4ba2d41b15f9bd0e19b2ab9674135813ec98f",
-            "reference": "5de4ba2d41b15f9bd0e19b2ab9674135813ec98f",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=7.1"
-        },
-        "time": "2021-09-13T13:58:11+00:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-main": "1.23-dev"
-            },
-            "thanks": {
-                "name": "symfony/polyfill",
-                "url": "https://github.com/symfony/polyfill"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Symfony\\Polyfill\\Php81\\": ""
-            },
-            "files": [
-                "bootstrap.php"
-            ],
-            "classmap": [
-                "Resources/stubs"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Nicolas Grekas",
-                "email": "p@tchwork.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "https://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony polyfill backporting some PHP 8.1+ features to lower PHP versions",
         "homepage": "https://symfony.com",
         "keywords": [
             "compatibility",
@@ -1574,62 +2792,54 @@
     },
     {
         "name": "symfony/translation",
-        "version": "v5.4.2",
-        "version_normalized": "5.4.2.0",
+        "version": "v4.4.34",
+        "version_normalized": "4.4.34.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/translation.git",
-            "reference": "ff8bb2107b6a549dc3c5dd9c498dcc82c9c098ca"
+            "reference": "26d330720627b234803595ecfc0191eeabc65190"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/translation/zipball/ff8bb2107b6a549dc3c5dd9c498dcc82c9c098ca",
-            "reference": "ff8bb2107b6a549dc3c5dd9c498dcc82c9c098ca",
+            "url": "https://api.github.com/repos/symfony/translation/zipball/26d330720627b234803595ecfc0191eeabc65190",
+            "reference": "26d330720627b234803595ecfc0191eeabc65190",
             "shasum": ""
         },
         "require": {
-            "php": ">=7.2.5",
-            "symfony/deprecation-contracts": "^2.1|^3",
+            "php": ">=7.1.3",
             "symfony/polyfill-mbstring": "~1.0",
             "symfony/polyfill-php80": "^1.16",
-            "symfony/translation-contracts": "^2.3"
+            "symfony/translation-contracts": "^1.1.6|^2"
         },
         "conflict": {
-            "symfony/config": "<4.4",
-            "symfony/console": "<5.3",
-            "symfony/dependency-injection": "<5.0",
-            "symfony/http-kernel": "<5.0",
-            "symfony/twig-bundle": "<5.0",
-            "symfony/yaml": "<4.4"
+            "symfony/config": "<3.4",
+            "symfony/dependency-injection": "<3.4",
+            "symfony/http-kernel": "<4.4",
+            "symfony/yaml": "<3.4"
         },
         "provide": {
-            "symfony/translation-implementation": "2.3"
+            "symfony/translation-implementation": "1.0|2.0"
         },
         "require-dev": {
             "psr/log": "^1|^2|^3",
-            "symfony/config": "^4.4|^5.0|^6.0",
-            "symfony/console": "^5.4|^6.0",
-            "symfony/dependency-injection": "^5.0|^6.0",
-            "symfony/finder": "^4.4|^5.0|^6.0",
-            "symfony/http-client-contracts": "^1.1|^2.0|^3.0",
-            "symfony/http-kernel": "^5.0|^6.0",
-            "symfony/intl": "^4.4|^5.0|^6.0",
-            "symfony/polyfill-intl-icu": "^1.21",
-            "symfony/service-contracts": "^1.1.2|^2|^3",
-            "symfony/yaml": "^4.4|^5.0|^6.0"
+            "symfony/config": "^3.4|^4.0|^5.0",
+            "symfony/console": "^3.4|^4.0|^5.0",
+            "symfony/dependency-injection": "^3.4|^4.0|^5.0",
+            "symfony/finder": "~2.8|~3.0|~4.0|^5.0",
+            "symfony/http-kernel": "^4.4",
+            "symfony/intl": "^3.4|^4.0|^5.0",
+            "symfony/service-contracts": "^1.1.2|^2",
+            "symfony/yaml": "^3.4|^4.0|^5.0"
         },
         "suggest": {
             "psr/log-implementation": "To use logging capability in translator",
             "symfony/config": "",
             "symfony/yaml": ""
         },
-        "time": "2021-12-25T19:45:36+00:00",
+        "time": "2021-11-04T12:23:33+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
-            "files": [
-                "Resources/functions.php"
-            ],
             "psr-4": {
                 "Symfony\\Component\\Translation\\": ""
             },
