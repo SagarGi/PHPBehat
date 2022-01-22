@@ -1,7 +1,4 @@
-Feature: Visiting Wikipedia
+Feature: Visiting Google
 
     Scenario: Search for an article on homepage
-        Given I am on "/"
-        When I fill in "text" with "abc"
-        And I press the "the button"
-        Then I should see "Broadcasting"
+        Given I am on the homepage

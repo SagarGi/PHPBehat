@@ -10,6 +10,7 @@
 
 namespace Behat\Mink\Driver;
 
+use Behat\Mink\Driver\Goutte\Client as ExtendedClient;
 use Goutte\Client;
 
 /**
@@ -26,6 +27,49 @@ class GoutteDriver extends BrowserKitDriver
      */
     public function __construct(Client $client = null)
     {
-        parent::__construct($client ?? new Client());
+        parent::__construct($client ?: new ExtendedClient());
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setBasicAuth($user, $password)
+    {
+        if (false === $user) {
+            $this->getClient()->resetAuth();
+
+            return;
+        }
+
+        $this->getClient()->setAuth($user, $password);
+    }
+
+    /**
+     * Gets the Goutte client.
+     *
+     * The method is overwritten only to provide the appropriate return type hint.
+     *
+     * @return Client
+     */
+    public function getClient()
+    {
+        return parent::getClient();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function reset()
+    {
+        parent::reset();
+        $this->getClient()->resetAuth();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function prepareUrl($url)
+    {
+        return $url;
     }
 }

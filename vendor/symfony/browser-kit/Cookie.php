@@ -121,11 +121,14 @@ class Cookie
     /**
      * Creates a Cookie instance from a Set-Cookie header value.
      *
+     * @param string      $cookie A Set-Cookie header value
+     * @param string|null $url    The base URL
+     *
      * @return static
      *
      * @throws \InvalidArgumentException
      */
-    public static function fromString(string $cookie, string $url = null)
+    public static function fromString($cookie, $url = null)
     {
         $parts = explode(';', $cookie);
 
@@ -222,7 +225,7 @@ class Cookie
     /**
      * Gets the name of the cookie.
      *
-     * @return string
+     * @return string The cookie name
      */
     public function getName()
     {
@@ -232,7 +235,7 @@ class Cookie
     /**
      * Gets the value of the cookie.
      *
-     * @return string
+     * @return string The cookie value
      */
     public function getValue()
     {
@@ -242,7 +245,7 @@ class Cookie
     /**
      * Gets the raw value of the cookie.
      *
-     * @return string
+     * @return string The cookie value
      */
     public function getRawValue()
     {
@@ -252,7 +255,7 @@ class Cookie
     /**
      * Gets the expires time of the cookie.
      *
-     * @return string|null
+     * @return string|null The cookie expires time
      */
     public function getExpiresTime()
     {
@@ -262,7 +265,7 @@ class Cookie
     /**
      * Gets the path of the cookie.
      *
-     * @return string
+     * @return string The cookie path
      */
     public function getPath()
     {
@@ -272,7 +275,7 @@ class Cookie
     /**
      * Gets the domain of the cookie.
      *
-     * @return string
+     * @return string The cookie domain
      */
     public function getDomain()
     {
@@ -282,7 +285,7 @@ class Cookie
     /**
      * Returns the secure flag of the cookie.
      *
-     * @return bool
+     * @return bool The cookie secure flag
      */
     public function isSecure()
     {
@@ -292,7 +295,7 @@ class Cookie
     /**
      * Returns the httponly flag of the cookie.
      *
-     * @return bool
+     * @return bool The cookie httponly flag
      */
     public function isHttpOnly()
     {
@@ -302,7 +305,7 @@ class Cookie
     /**
      * Returns true if the cookie has expired.
      *
-     * @return bool
+     * @return bool true if the cookie has expired, false otherwise
      */
     public function isExpired()
     {
@@ -311,6 +314,8 @@ class Cookie
 
     /**
      * Gets the samesite attribute of the cookie.
+     *
+     * @return string|null The cookie samesite attribute
      */
     public function getSameSite(): ?string
     {

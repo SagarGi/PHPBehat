@@ -6,7 +6,6 @@ Mink Goutte Driver
 [![Total Downloads](https://poser.pugx.org/behat/mink-goutte-driver/downloads.svg)](https://packagist.org/packages/behat/mink-goutte-driver)
 [![CI](https://github.com/minkphp/MinkGoutteDriver/actions/workflows/tests.yml/badge.svg)](https://github.com/minkphp/MinkGoutteDriver/actions/workflows/tests.yml)
 [![License](https://poser.pugx.org/behat/mink-goutte-driver/license.svg)](https://packagist.org/packages/behat/mink-goutte-driver)
-[![codecov](https://codecov.io/gh/minkphp/MinkGoutteDriver/branch/master/graph/badge.svg?token=K7GduJsQ4A)](https://codecov.io/gh/minkphp/MinkGoutteDriver)
 
 Usage Example
 -------------
@@ -19,7 +18,7 @@ require "vendor/autoload.php";
 use Behat\Mink\Mink,
     Behat\Mink\Session,
     Behat\Mink\Driver\GoutteDriver,
-    Goutte\Client as GoutteClient;
+    Behat\Mink\Driver\Goutte\Client as GoutteClient;
 
 $mink = new Mink(array(
     'goutte' => new Session(new GoutteDriver(new GoutteClient())),
@@ -39,8 +38,8 @@ Add a file composer.json with content:
 ``` json
 {
     "require": {
-        "behat/mink":               "^1.9",
-        "behat/mink-goutte-driver": "^2.0"
+        "behat/mink":               "~1.5",
+        "behat/mink-goutte-driver": "~1.0"
     }
 }
 ```

@@ -1,12 +1,10 @@
 {
   "require-dev": {
-    "behat/behat": "^3.10",
-    "behat/mink-goutte-driver": "*",
-    "behat/mink-browserkit-driver": "*",
-    "behat/mink": "*",
+    "behat/behat": "^3.4.1",
+    "behat/mink-goutte-driver": "^1.2",
+    "behat/mink": "^1.8",
     "symfony/config": "4.4.9",
-    "behat/mink-extension": "^2.2",
-    "behat/mink-selenium2-driver": "*",
-    "guzzle/http": "*"
+    "behat/mink-extension": "^2.3",
+    "behat/mink-selenium2-driver": "^1.4"
   }
 }

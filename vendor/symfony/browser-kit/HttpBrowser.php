@@ -42,7 +42,7 @@ class HttpBrowser extends AbstractBrowser
     /**
      * @param Request $request
      */
-    protected function doRequest(object $request): Response
+    protected function doRequest($request): Response
     {
         $headers = $this->getHeaders($request);
         [$body, $extraHeaders] = $this->getBodyAndExtraHeaders($request, $headers);
@@ -61,7 +61,7 @@ class HttpBrowser extends AbstractBrowser
      */
     private function getBodyAndExtraHeaders(Request $request, array $headers): array
     {
-        if (\in_array($request->getMethod(), ['GET', 'HEAD']) && !isset($headers['content-type'])) {
+        if (\in_array($request->getMethod(), ['GET', 'HEAD'])) {
             return ['', []];
         }
 
@@ -91,21 +91,10 @@ class HttpBrowser extends AbstractBrowser
             return ['', []];
         }
 
-        array_walk_recursive($fields, $caster = static function (&$v) use (&$caster) {
-            if (\is_object($v)) {
-                if ($vars = get_object_vars($v)) {
-                    array_walk_recursive($vars, $caster);
-                    $v = $vars;
-                } elseif (method_exists($v, '__toString')) {
-                    $v = (string) $v;
-                }
-            }
-        });
-
-        return [http_build_query($fields, '', '&'), ['Content-Type' => 'application/x-www-form-urlencoded']];
+        return [http_build_query($fields, '', '&', \PHP_QUERY_RFC1738), ['Content-Type' => 'application/x-www-form-urlencoded']];
     }
 
-    protected function getHeaders(Request $request): array
+    private function getHeaders(Request $request): array
     {
         $headers = [];
         foreach ($request->getServer() as $key => $value) {
