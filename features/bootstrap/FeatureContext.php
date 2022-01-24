@@ -93,7 +93,12 @@ class FeatureContext extends MinkContext implements Context, SnippetAcceptingCon
      public function theUserShouldBeAbleToSeeTheHomepage()
      {
          $appLogoLocator = $this->getSession()->getPage()->find('css', '.title');
-         echo $appLogoLocator->getText();
-         assert($appLogoLocator->getText(),"PRODUCTS");
+         if(!$appLogoLocator){
+             throw new Exception('cannot locate element!!!');
+         }
+
+         if($appLogoLocator->getText() != "PRODUCTS"){
+            throw new Exception('Unmatched Text!');
+         }
      }
 }
