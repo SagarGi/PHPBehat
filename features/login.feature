@@ -6,9 +6,9 @@ Feature: Login
     # Scenario: Search for an article on homepage
     #     Given I am on the homepage
 
-    @loginscenario
+
     Scenario: Login with valid credential.
         Given the has browsed to login page
-        When the user logs in with username "standard_user" and password "secret_sauce"
-        Then the user should be able to see the homepage
+# When the user logs in with username "standard_user" and password "secret_sauce"
+# Then the user should be able to see the homepage
 

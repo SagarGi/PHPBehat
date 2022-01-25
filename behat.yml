@@ -1,14 +1,24 @@
 default:
   suites:
-    default:
+    BasicTest:
       paths:
         features: features
         bootstraps: features/bootstrap
       contexts:
+        # - APIContext
         - FeatureContext
+        # - APIContext
         # - Behat\MinkExtension\Context\MinkContext
 
+    # APITest:
+    #   paths:
+    #     features: features
+    #     bootstraps: features/bootstrap
+    #   contexts:
+    #     - APIContext
+
   extensions:
+    # SensioLabs\Behat\PageObjectExtension: ~
     Behat\MinkExtension:
       base_url: https://www.saucedemo.com/
       # goutte: ~
