@@ -11,5 +11,5 @@ Feature: API Testing
         Given I request "/repos/Shashikant86/BehatDemo"
         Then the response should be JSON
         And  the response status code should be 200
-        And the response has a "name" property
-        And the "name" property equals "BehatDemo"
+        And the response has a "id" property
+        And the "id" property equals "1"

@@ -14,7 +14,7 @@ use GuzzleHttp\Client;
  */
 class APIContext implements Context
 {
-    public $_response;
+    private $_response;
 
     public function _construct()
     {
@@ -29,10 +29,22 @@ class APIContext implements Context
      */
     public function iRequest($requestEndpoint)
     {
-        $client = new Client(['base_uri' => 'https://api.github.com'.$requestEndpoint]);
-        $responseFromAPI = $client->get('/');
-        $this->_response = $responseFromAPI;
-        // echo $response->getBody()->getContents();
+        // $client = new Client(['base_uri' => 'https://api.github.com/repos/Shashikant86/BehatDemo']);
+        $client = new Client();
+        $responseFromAPI = $client->request('get', 'https://jsonplaceholder.typicode.com/todos/1', [
+            \GuzzleHttp\RequestOptions::IDN_CONVERSION => true,
+        ]);
+
+        $this->_response =  $responseFromAPI;
+
+        $dataObjects = json_decode($this->_response->getBody());
+
+        echo $dataObjects->id;
+        
+        // echo $responseFromAPI->getBody();
+        // $this->_response = $responseFromAPI->$name;
+       
+        // echo $responseFromAPI->getStatusCode();
     }
 
     /**
@@ -65,9 +77,12 @@ class APIContext implements Context
     public function theResponseHasAProperty($propertyName)
     {
    
-        $dataFromAPI = $this->_response->getBody()->getContents();
+        $dataFromAPI = $this->_response->getBody();
+        $dataObjects = json_decode($dataFromAPI);
+        var_dump($dataObjects->$propertyName);
+        echo $dataObjects->id;
         if(!empty($dataFromAPI)){
-            if(!isset($dataFromAPI->$propertyName)){
+            if(!isset($dataObjects->$propertyName)){
                 throw new Exception("Property ". $propertyName .' is not set in the JSON response');
             }
         }
@@ -78,19 +93,21 @@ class APIContext implements Context
      */
     public function thePropertyEquals($key, $value)
     {
-        $dataFromAPI = $this->_response->getBody()->getContents();
-        
+        $dataFromAPI = $this->_response->getBody();
+        $dataObjects = json_decode($dataFromAPI);
+        // echo $key;
+        echo $dataObjects->$key;
         // echo $dataFromAPI.$key;
         // echo $dataFromAPI.$value;
 
         if(!empty($dataFromAPI)){
-            if(!isset($dataFromAPI->key)){
+            if(!isset($dataObjects->$key)){
                 throw new Exception("Key '".$key."' is not set!\n");
             }
-            if(!isset($dataFromAPI->value)){
-                throw new Exception("Key '".$value." 'Did not matched! " . 'Given is ' . $value);
+
+            if($value != $dataObjects->$key){
+                throw new Exception("Value didint match!!");
             }
-            
         }
     }
 }

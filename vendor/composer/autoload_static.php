@@ -57,6 +57,7 @@ class ComposerStaticInitc06e9117e2fddc9532fc406c41b74fd4
             'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
             'ProxyManager\\' => 13,
+            'Page\\' => 5,
         ),
         'L' => 
         array (
@@ -189,6 +190,10 @@ class ComposerStaticInitc06e9117e2fddc9532fc406c41b74fd4
         'ProxyManager\\' => 
         array (
             0 => __DIR__ . '/..' . '/friendsofphp/proxy-manager-lts/src/ProxyManager',
+        ),
+        'Page\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/features/PageObjects',
         ),
         'Laminas\\Code\\' => 
         array (

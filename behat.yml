@@ -5,9 +5,12 @@ default:
         features: features
         bootstraps: features/bootstrap
       contexts:
-        # - APIContext
+        - APIContext
         # - FeatureContext
-        - PageContext
+        # - PageContext
+        # base_url: https://www.saucedemo.com/
+        # parameters:
+
         # - Behat\MinkExtension\Context\MinkContext
 
   extensions:
