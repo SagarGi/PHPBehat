@@ -7,6 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'WebDriver' => array($vendorDir . '/instaclick/php-webdriver/lib'),
-    'Behat\\MinkExtension' => array($vendorDir . '/behat/mink-extension/src'),
+    'Behat\\MinkExtension' => array($vendorDir . '/behat/mink-extension/src', $vendorDir . '/friends-of-behat/mink-extension/src'),
     'Behat\\Gherkin' => array($vendorDir . '/behat/gherkin/src'),
 );

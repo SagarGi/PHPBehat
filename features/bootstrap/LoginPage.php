@@ -1,20 +1,11 @@
 <?php
 
-namespace Pages;
-
+namespace Page;
 use SensioLabs\Behat\PageObjectExtension\PageObject\Page;
 
-class LoginPage extends Page
-{
-    // public $websiteURL = "https://saucedemo.com";
-    // public $usernameSelector = "user-name";
-    // public $passwordSelector = "password";
-    // public $loginButtonSelector = "#login-button";
-    // public $appTitleSelector = ".title";
-
-
-    // public function navigateToLoginPage(){
-        
-    // }
-
+class LoginPage extends Page{
+    protected $path = 'https://www.saucedemo.com';
+    public function greet(){
+        echo "Hello  from the other side!!";
+    }
 }

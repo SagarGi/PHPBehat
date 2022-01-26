@@ -21,6 +21,7 @@ class ComposerStaticInitc06e9117e2fddc9532fc406c41b74fd4
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
+        'c2aad8997a98dfc4771bdbffea3d62b7' => __DIR__ . '/..' . '/laminas/laminas-code/polyfill/ReflectionEnumPolyfill.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -48,12 +49,18 @@ class ComposerStaticInitc06e9117e2fddc9532fc406c41b74fd4
             'Symfony\\Component\\Console\\' => 26,
             'Symfony\\Component\\Config\\' => 25,
             'Symfony\\Component\\BrowserKit\\' => 29,
+            'SensioLabs\\Behat\\PageObjectExtension\\' => 37,
         ),
         'P' => 
         array (
             'Psr\\Http\\Message\\' => 17,
             'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
+            'ProxyManager\\' => 13,
+        ),
+        'L' => 
+        array (
+            'Laminas\\Code\\' => 13,
         ),
         'G' => 
         array (
@@ -163,6 +170,10 @@ class ComposerStaticInitc06e9117e2fddc9532fc406c41b74fd4
         array (
             0 => __DIR__ . '/..' . '/symfony/browser-kit',
         ),
+        'SensioLabs\\Behat\\PageObjectExtension\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sensiolabs/behat-page-object-extension/src',
+        ),
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
@@ -174,6 +185,14 @@ class ComposerStaticInitc06e9117e2fddc9532fc406c41b74fd4
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'ProxyManager\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/friendsofphp/proxy-manager-lts/src/ProxyManager',
+        ),
+        'Laminas\\Code\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laminas/laminas-code/src',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (
@@ -236,6 +255,7 @@ class ComposerStaticInitc06e9117e2fddc9532fc406c41b74fd4
             'Behat\\MinkExtension' => 
             array (
                 0 => __DIR__ . '/..' . '/behat/mink-extension/src',
+                1 => __DIR__ . '/..' . '/friends-of-behat/mink-extension/src',
             ),
             'Behat\\Gherkin' => 
             array (
