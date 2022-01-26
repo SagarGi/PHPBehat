@@ -6,14 +6,14 @@ use Page\LoginPage;
 use SensioLabs\Behat\PageObjectExtension\PageObject\Page;
 use SensioLabs\Behat\PageObjectExtension\Context\PageObjectContext;
 
-class PageContext extends Page implements Context, SnippetAcceptingContext{
+class PageContext extends PageObjectContext implements Context, SnippetAcceptingContext{
 
     
 
     private $loginPage;
 
     public function __construct(LoginPage $loginPage){
-        var_dump($loginPage);
+        // var_dump($loginPage);
         $this->loginPage = $loginPage;
     }
 
@@ -22,7 +22,7 @@ class PageContext extends Page implements Context, SnippetAcceptingContext{
      */
     public function theHasBrowsedToLoginPages()
     {
-        
+       $this->loginPage->open();
     }
 
 
