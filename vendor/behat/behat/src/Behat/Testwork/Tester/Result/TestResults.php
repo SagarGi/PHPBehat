@@ -62,7 +62,7 @@ final class TestResults implements TestResult, Countable, IteratorAggregate
     /**
      * {@inheritdoc}
      */
-    public function count(): int
+    public function count()
     {
         return count($this->results);
     }
@@ -70,7 +70,7 @@ final class TestResults implements TestResult, Countable, IteratorAggregate
     /**
      * {@inheritdoc}
      */
-    public function getIterator(): ArrayIterator
+    public function getIterator()
     {
         return new ArrayIterator($this->results);
     }

@@ -77,7 +77,7 @@ final class GroupedSpecificationIterator implements SpecificationIterator
     /**
      * {@inheritdoc}
      */
-    public function rewind(): void
+    public function rewind()
     {
         $this->position = 0;
         while (isset($this->iterators[$this->position])) {
@@ -93,7 +93,7 @@ final class GroupedSpecificationIterator implements SpecificationIterator
     /**
      * {@inheritdoc}
      */
-    public function next(): void
+    public function next()
     {
         if (!isset($this->iterators[$this->position])) {
             return;
@@ -114,7 +114,7 @@ final class GroupedSpecificationIterator implements SpecificationIterator
     /**
      * {@inheritdoc}
      */
-    public function valid(): bool
+    public function valid()
     {
         return isset($this->iterators[$this->position]) && $this->iterators[$this->position]->valid();
     }
@@ -122,7 +122,6 @@ final class GroupedSpecificationIterator implements SpecificationIterator
     /**
      * {@inheritdoc}
      */
-    #[\ReturnTypeWillChange]
     public function current()
     {
         return $this->iterators[$this->position]->current();
@@ -131,7 +130,7 @@ final class GroupedSpecificationIterator implements SpecificationIterator
     /**
      * {@inheritdoc}
      */
-    public function key(): int
+    public function key()
     {
         return $this->position + $this->iterators[$this->position]->key();
     }

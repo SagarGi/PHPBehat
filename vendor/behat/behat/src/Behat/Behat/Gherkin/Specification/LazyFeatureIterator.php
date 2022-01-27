@@ -84,7 +84,7 @@ final class LazyFeatureIterator implements SpecificationIterator
     /**
      * {@inheritdoc}
      */
-    public function rewind(): void
+    public function rewind()
     {
         $this->position = 0;
         $this->moveToNextAvailableFeature();
@@ -93,7 +93,7 @@ final class LazyFeatureIterator implements SpecificationIterator
     /**
      * {@inheritdoc}
      */
-    public function next(): void
+    public function next()
     {
         $this->moveToNextAvailableFeature();
     }
@@ -101,7 +101,7 @@ final class LazyFeatureIterator implements SpecificationIterator
     /**
      * {@inheritdoc}
      */
-    public function valid(): bool
+    public function valid()
     {
         return null !== $this->currentFeature;
     }
@@ -109,7 +109,7 @@ final class LazyFeatureIterator implements SpecificationIterator
     /**
      * {@inheritdoc}
      */
-    public function key(): int
+    public function key()
     {
         return $this->position;
     }
@@ -117,7 +117,7 @@ final class LazyFeatureIterator implements SpecificationIterator
     /**
      * {@inheritdoc}
      */
-    public function current(): FeatureNode
+    public function current()
     {
         return $this->currentFeature;
     }

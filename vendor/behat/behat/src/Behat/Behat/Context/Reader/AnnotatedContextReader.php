@@ -11,7 +11,6 @@
 namespace Behat\Behat\Context\Reader;
 
 use Behat\Behat\Context\Annotation\AnnotationReader;
-use Behat\Behat\Context\Annotation\DocBlockHelper;
 use Behat\Behat\Context\Environment\ContextEnvironment;
 use Behat\Testwork\Call\Callee;
 use ReflectionClass;
@@ -42,21 +41,6 @@ final class AnnotatedContextReader implements ContextReader
      * @var AnnotationReader[]
      */
     private $readers = array();
-
-    /**
-     * @var DocBlockHelper
-     */
-    private $docBlockHelper;
-
-    /**
-     * Initializes reader.
-     *
-     * @param DocBlockHelper $docBlockHelper
-     */
-    public function __construct(DocBlockHelper $docBlockHelper)
-    {
-        $this->docBlockHelper = $docBlockHelper;
-    }
 
     /**
      * Registers annotation reader.
@@ -126,7 +110,7 @@ final class AnnotatedContextReader implements ContextReader
     private function readDocBlockCallees($class, ReflectionMethod $method, $docBlock)
     {
         $callees = array();
-        $description = $this->docBlockHelper->extractDescription($docBlock);
+        $description = $this->readDescription($docBlock);
         $docBlock = $this->mergeMultilines($docBlock);
 
         foreach (explode("\n", $docBlock) as $docLine) {
@@ -158,6 +142,37 @@ final class AnnotatedContextReader implements ContextReader
     private function mergeMultilines($docBlock)
     {
         return preg_replace("#\\\\$\s*+\*\s*+([^\\\\$]++)#m", '$1', $docBlock);
+    }
+
+    /**
+     * Extracts a description from the provided docblock,
+     * with support for multiline descriptions.
+     *
+     * @param string $docBlock
+     *
+     * @return string
+     */
+    private function readDescription($docBlock)
+    {
+        // Remove indentation
+        $description = preg_replace('/^[\s\t]*/m', '', $docBlock);
+
+        // Remove block comment syntax
+        $description = preg_replace('/^\/\*\*\s*|^\s*\*\s|^\s*\*\/$/m', '', $description);
+
+        // Remove annotations
+        $description = preg_replace('/^@.*$/m', '', $description);
+
+        // Ignore docs after a "--" separator
+        if (preg_match('/^--.*$/m', $description)) {
+            $descriptionParts = preg_split('/^--.*$/m', $description);
+            $description = array_shift($descriptionParts);
+        }
+
+        // Trim leading and trailing newlines
+        $description = trim($description, "\r\n");
+
+        return $description;
     }
 
     /**

@@ -63,7 +63,7 @@ final class Application extends BaseApplication
      *
      * @return InputDefinition An InputDefinition instance
      */
-    public function getDefaultInputDefinition(): InputDefinition
+    public function getDefaultInputDefinition()
     {
         return new InputDefinition(array(
             new InputOption('--profile', '-p', InputOption::VALUE_REQUIRED, 'Specify config profile to use.'),
@@ -124,7 +124,7 @@ final class Application extends BaseApplication
         return parent::doRun($input, $output);
     }
 
-    protected function getDefaultCommands(): array
+    protected function getDefaultCommands()
     {
         $commands = parent::getDefaultCommands();
 
@@ -210,7 +210,7 @@ final class Application extends BaseApplication
      *
      * @return string The command name
      */
-    protected function getCommandName(InputInterface $input): string
+    protected function getCommandName(InputInterface $input)
     {
         if ($input->hasParameterOption(array('--config-reference'))) {
             return 'dump-reference';

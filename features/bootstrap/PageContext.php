@@ -26,4 +26,20 @@ class PageContext extends RawMinkContext implements Context, SnippetAcceptingCon
     {
        $this->loginPage->open();
     }
+    /**
+     * @When the user logs in with username :arg1 and password :arg2
+     */
+    public function theUserLogsInWithUsernameAndPassword($arg1, $arg2)
+    {
+        
+    }
+
+    /**
+     * @Then the user should be able to see the homepage
+     */
+    public function theUserShouldBeAbleToSeeTheHomepage()
+    {
+        
+    }
+
 }

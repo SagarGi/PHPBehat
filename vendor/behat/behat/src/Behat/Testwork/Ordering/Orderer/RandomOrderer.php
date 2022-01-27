@@ -11,7 +11,6 @@
 namespace Behat\Testwork\Ordering\Orderer;
 
 use Behat\Testwork\Specification\SpecificationArrayIterator;
-use Behat\Testwork\Specification\SpecificationIterator;
 
 /**
  * Prioritises Suites and Features into random order

@@ -47,7 +47,13 @@ final class DumpReferenceCommand extends BaseCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $dumper = new YamlReferenceDumper();
+        if (class_exists('Symfony\Component\Config\Definition\Dumper\YamlReferenceDumper')) {
+            $dumper = new YamlReferenceDumper();
+        } else {
+            // Support Symfony Config 2.3
+            $dumper = new ReferenceDumper();
+        }
+
         $configTree = new ConfigurationTree();
 
         $output->writeln($dumper->dumpNode($configTree->getConfigTree($this->extensionManager->getExtensions())));

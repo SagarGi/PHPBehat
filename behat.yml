@@ -6,7 +6,7 @@ default:
       paths: ["%paths.base%/features"]
       contexts:
         # - APIContext
-        - FeatureContext
+        # - FeatureContext
         - PageContext
         # base_url: https://www.saucedemo.com/
         # parameters:

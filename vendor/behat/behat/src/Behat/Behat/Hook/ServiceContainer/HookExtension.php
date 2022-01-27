@@ -11,7 +11,6 @@
 namespace Behat\Behat\Hook\ServiceContainer;
 
 use Behat\Behat\Context\ServiceContainer\ContextExtension;
-use Behat\Behat\Definition\ServiceContainer\DefinitionExtension;
 use Behat\Behat\Tester\ServiceContainer\TesterExtension;
 use Behat\Testwork\Hook\ServiceContainer\HookExtension as BaseExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -33,7 +32,6 @@ final class HookExtension extends BaseExtension
         parent::load($container, $config);
 
         $this->loadAnnotationReader($container);
-        $this->loadAttributeReader($container);
     }
 
     /**
@@ -86,19 +84,5 @@ final class HookExtension extends BaseExtension
         $definition = new Definition('Behat\Behat\Hook\Context\Annotation\HookAnnotationReader');
         $definition->addTag(ContextExtension::ANNOTATION_READER_TAG, array('priority' => 50));
         $container->setDefinition(ContextExtension::ANNOTATION_READER_TAG . '.hook', $definition);
-    }
-
-    /**
-     * Loads hook attribute reader.
-     *
-     * @param ContainerBuilder $container
-     */
-    private function loadAttributeReader(ContainerBuilder $container)
-    {
-        $definition = new Definition('\Behat\Behat\Hook\Context\Attribute\HookAttributeReader', array(
-            new Reference(DefinitionExtension::DOC_BLOCK_HELPER_ID)
-        ));
-        $definition->addTag(ContextExtension::ATTRIBUTE_READER_TAG, array('priority' => 50));
-        $container->setDefinition(ContextExtension::ATTRIBUTE_READER_TAG . '.hook', $definition);
     }
 }

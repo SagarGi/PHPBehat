@@ -51,7 +51,7 @@ class ChainEventListener implements EventListener, Countable, IteratorAggregate
     /**
      * {@inheritdoc}
      */
-    public function count(): int
+    public function count()
     {
         return count($this->listeners);
     }
@@ -59,7 +59,7 @@ class ChainEventListener implements EventListener, Countable, IteratorAggregate
     /**
      * {@inheritdoc}
      */
-    public function getIterator(): ArrayIterator
+    public function getIterator()
     {
         return new ArrayIterator($this->listeners);
     }

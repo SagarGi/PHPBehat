@@ -28,7 +28,7 @@ final class ConsoleFormatter extends BaseOutputFormatter
      *
      * @return string The styled message
      */
-    public function format($message): string
+    public function format($message)
     {
         return preg_replace_callback(self::CUSTOM_PATTERN, array($this, 'replaceStyle'), $message);
     }
