@@ -1,12 +1,12 @@
 default:
+  autoload:
+    "": "%paths.base%/features/bootstrap"
   suites:
     BasicTest:
-      paths:
-        features: features
-        bootstraps: features/bootstrap
+      paths: ["%paths.base%/features"]
       contexts:
         # - APIContext
-        # - FeatureContext
+        - FeatureContext
         - PageContext
         # base_url: https://www.saucedemo.com/
         # parameters:
@@ -14,15 +14,19 @@ default:
         # - Behat\MinkExtension\Context\MinkContext
 
   extensions:
+    SensioLabs\Behat\PageObjectExtension: ~
+    rdx\behatvars\BehatVariablesExtension: ~
+    Cjm\Behat\StepThroughExtension: ~
     Behat\MinkExtension:
+      browser_name: chrome
       base_url: https://www.saucedemo.com/
-      goutte: ~
       selenium2:
         wd_host: http://0.0.0.0:4444/wd/hub
         capabilities:
-          marionette: true
+          marionette: null
           browser: chrome
-          version: 2.9
-      browser_name: chrome
-      default_session: selenium2
-    SensioLabs\Behat\PageObjectExtension: ~
+          name: pagetest
+          browserName: chrome
+          platform: linux
+          extra_capabilities:
+            maxDuration: 3600

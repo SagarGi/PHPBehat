@@ -498,6 +498,57 @@
         ]
     },
     {
+        "name": "ciaranmcnulty/behat-stepthroughextension",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/ciaranmcnulty/behat-stepthroughextension.git",
+            "reference": "4c0df28e016c567c417cbccd49e480c0649f531e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/ciaranmcnulty/behat-stepthroughextension/zipball/4c0df28e016c567c417cbccd49e480c0649f531e",
+            "reference": "4c0df28e016c567c417cbccd49e480c0649f531e",
+            "shasum": ""
+        },
+        "require": {
+            "behat/behat": "~3.0"
+        },
+        "require-dev": {
+            "phpspec/phpspec": "dev-master",
+            "symfony/filesystem": "~2.3",
+            "symfony/process": "~2.3"
+        },
+        "time": "2016-10-15T09:48:09+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Ciaran McNulty",
+                "email": "mail@ciaranmcnulty.com",
+                "homepage": "http://ciaranmcnulty.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "Extension for behat to help debug failing scenarios",
+        "homepage": "http://github.com/ciaranmcnulty/behat-stepthroughextension",
+        "keywords": [
+            "BDD",
+            "Behat",
+            "TDD"
+        ]
+    },
+    {
         "name": "fabpot/goutte",
         "version": "v3.3.1",
         "version_normalized": "3.3.1.0",
@@ -1262,6 +1313,47 @@
             }
         ],
         "description": "A polyfill for getallheaders."
+    },
+    {
+        "name": "rdx/behat-variables",
+        "version": "1.2",
+        "version_normalized": "1.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/rudiedirkx/behat-variables.git",
+            "reference": "3729c7aec18cf4a4ce1a0faacc8da3fc0dc9354a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/rudiedirkx/behat-variables/zipball/3729c7aec18cf4a4ce1a0faacc8da3fc0dc9354a",
+            "reference": "3729c7aec18cf4a4ce1a0faacc8da3fc0dc9354a",
+            "shasum": ""
+        },
+        "require": {
+            "behat/behat": "^3.0"
+        },
+        "require-dev": {
+            "symfony/process": "^2.1"
+        },
+        "time": "2017-11-16T11:58:21+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "rdx\\behatvars\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Rudie Dirkx",
+                "email": "github@hotblocks.nl"
+            }
+        ],
+        "description": "Store variables across Scenarios during Behat testing"
     },
     {
         "name": "sensiolabs/behat-page-object-extension",

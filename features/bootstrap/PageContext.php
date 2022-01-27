@@ -5,8 +5,10 @@ use Behat\Behat\Context\SnippetAcceptingContext;
 use Page\LoginPage;
 use SensioLabs\Behat\PageObjectExtension\PageObject\Page;
 use SensioLabs\Behat\PageObjectExtension\Context\PageObjectContext;
+use Behat\MinkExtension\Context\RawMinkContext;
 
-class PageContext extends PageObjectContext implements Context, SnippetAcceptingContext{
+
+class PageContext extends RawMinkContext implements Context, SnippetAcceptingContext{
 
     
 
@@ -24,6 +26,4 @@ class PageContext extends PageObjectContext implements Context, SnippetAccepting
     {
        $this->loginPage->open();
     }
-
-
 }
